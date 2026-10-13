@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mira | Professional MC Portfolio</title>
+    <!-- Font Awesome untuk icon sosial media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a24; /* Hitam kebiruan elegan */
+            --accent: #d4af37; /* Gold premium */
+            --bg-light: #f4f4f4;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        /* --- HEADER & HERO SECTION --- */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a2a35 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 100px 20px 80px;
+            position: relative;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px; /* Persegi dengan sudut melengkung */
+            border: 4px solid var(--accent);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #ccc;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        /* Social Media Buttons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 25px;
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .social-btn:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- LAYOUT UTAMA --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- PROFIL & PENGALAMAN (RESUME) --- */
+        .resume-section {
+            background-color: #fff;
+            padding: 60px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .resume-column h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .resume-column h3 i {
+            color: var(--accent);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+            border-left: 2px solid #e0e0e0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background-color: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 5px;
+            background: rgba(212, 175, 55, 0.1);
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .timeline-text {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* --- PORTOFOLIO GALLERY --- */
+        .portfolio-section {
+            padding: 80px 20px;
+        }
+
+        .category-wrapper {
+            margin-bottom: 70px;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Grid Masonry-style sederhana untuk rasio foto yang berbeda */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            grid-auto-flow: dense; /* Mengisi celah kosong */
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #e9ecef; /* Warna skeleton loading */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            /* Memaksa rasio 4:5 yang aman untuk hampir semua foto (potrait maupun landscape di-crop estetik) */
+            aspect-ratio: 4 / 5; 
+        }
+
+        /* Khusus gambar yang landscape (16:9), kita buat membentang di 2 kolom jika di layar besar */
+        @media (min-width: 768px) {
+            .gallery-item.landscape {
+                grid-column: span 2;
+                aspect-ratio: 16 / 9;
+            }
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Kunci agar foto tidak gepeng */
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            padding: 20px 15px 15px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary);
+            color: #aaa;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 5px solid var(--accent);
+        }
+
+        footer p {
+            margin-top: 10px;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .resume-grid { grid-template-columns: 1fr; gap: 40px; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header>
+        <div class="profile-wrapper">
+            <!-- PENTING: Pastikan file bernama persis profil.png ada di github -->
+            <img src="profil.png" alt="Mira - Professional MC" class="profile-img">
+        </div>
+        <h1>MIRA</h1>
+        <div class="subtitle">Professional Master of Ceremony</div>
+        
+        <div class="social-links">
+            <a href="https://instagram.com/miragustinaa.mc" target="_blank" class="social-btn">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <!-- Nanti kalau ada TikTok, tinggal aktifkan baris di bawah ini dan ganti username-nya -->
+            <!-- <a href="https://tiktok.com/@username_tiktok" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i> TikTok</a> -->
+        </div>
+    </header>
+
+    <!-- PROFIL & PENGALAMAN (RESUME) -->
+    <section class="resume-section">
+        <div class="container">
+            <h2 class="section-title">Profil & Perjalanan Karier</h2>
+            <div class="resume-grid">
+                
+                <!-- Pengalaman Kerja -->
+                <div class="resume-column">
+                    <h3><i class="fas fa-briefcase"></i> Pengalaman Profesional</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018 - Sekarang</div>
+                        <div class="timeline-title">Professional Master of Ceremony (MC)</div>
+                        <p class="timeline-text">Spesialisasi dalam memandu berbagai acara korporat, *fun events*, bazar *fashion* di mall, *handover* serah terima, *Focus Group Discussion* (FGD), *talkshow*, dan *corporate training*.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2009 - 2012</div>
+                        <div class="timeline-title">Customer Service</div>
+                        <p class="timeline-text">Bank Central Asia (BCA)</p>
+                    </div>
+                </div>
+
+                <!-- Pendidikan -->
+                <div class="resume-column">
+                    <h3><i class="fas fa-graduation-cap"></i> Pendidikan Formal</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2005 - 2009</div>
+                        <div class="timeline-title">Universitas Sriwijaya</div>
+                        <p class="timeline-text">Lulusan program sarjana.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTOFOLIO SECTION -->
+    <section class="portfolio-section container">
+        <h2 class="section-title">Portofolio Acara</h2>
+
+        <!-- KATEGORI 1: Corporate, Training & FGD -->
+        <div class="category-wrapper">
+            <h3 class="category-title">Corporate, Training & FGD</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="XLSMART_FUTURE_READY_TRAINING_1.jpeg" alt="XL Smart Future Ready" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="XLSMART_FUTURE_READY_TRAINING_2.jpeg" alt="XL Smart Future Ready" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="XLSMART_FUTURE_READY_TRAINING_3.jpeg" alt="XL Smart Future Ready" class="gallery-img" loading="lazy"></div>
+                
+                <div class="gallery-item"><img src="Q4 TEAM BUILDING WRAPPED IN WARMTH 1.jpg" alt="Q4 Team Building" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Q4 TEAM BUILDING WRAPPED IN WARMTH 2.jpg" alt="Q4 Team Building" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Q4 TEAM BUILDING WRAPPED IN WARMTH 3.jpg" alt="Q4 Team Building" class="gallery-img" loading="lazy"></div>
+
+                <div class="gallery-item"><img src="FGD_01.jpg" alt="Focus Group Discussion" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="FGD_03.jpg" alt="Focus Group Discussion" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="FGD_04.jpg" alt="Focus Group Discussion" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="FGD_05.jpg" alt="Focus Group Discussion" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="FGD_06.jpg" alt="Focus Group Discussion" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="FGD_07.jpg" alt="Focus Group Discussion" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="FGD_08.jpg" alt="Focus Group Discussion" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="FGD_09.jpg" alt="Focus Group Discussion" class="gallery-img" loading="lazy"></div>
+                
+                <div class="gallery-item"><img src="FGD2_01.jpg" alt="Focus Group Discussion 2" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="FGD2_02.jpg" alt="Focus Group Discussion 2" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="FGD2_04.jpg" alt="Focus Group Discussion 2" class="gallery-img" loading="lazy"></div>
+
+                <!-- Handover (Farewell) -->
+                <!-- Menambahkan class 'landscape' untuk rasio 9:16 agar terlihat lebih lebar di grid desktop -->
+                <div class="gallery-item landscape"><img src="Farewell_ Handover_1.jpeg" alt="Farewell Handover" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item landscape"><img src="Farewell_ Handover_2.jpeg" alt="Farewell Handover" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Farewell_ Handover_3.jpeg" alt="Farewell Handover" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Farewell_ Handover_4.jpeg" alt="Farewell Handover" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Farewell_ Handover_5.jpeg" alt="Farewell Handover" class="gallery-img" loading="lazy"></div>
+            </div>
+        </div>
+
+        <!-- KATEGORI 2: Brand Activation & Launching -->
+        <div class="category-wrapper">
+            <h3 class="category-title">Brand Activation & Launching</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="BRAND LAUNCHING ACTIVATION 1.jpg" alt="Brand Launching" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="BRAND LAUNCHING ACTIVATION 2.jpg" alt="Brand Launching" class="gallery-img" loading="lazy"></div>
+                
+                <div class="gallery-item"><img src="Brand_Activation_01.jpg" alt="Brand Activation" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Brand_Activation_02.jpg" alt="Brand Activation" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Brand_Activation_03.jpg" alt="Brand Activation" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Brand_Activation_04.jpg" alt="Brand Activation" class="gallery-img" loading="lazy"></div>
+
+                <div class="gallery-item"><img src="GRAND OPENING 1.jpg" alt="Grand Opening" class="gallery-img" loading="lazy"></div>
+            </div>
+        </div>
+
+        <!-- KATEGORI 3: Fashion Bazaar & Lifestyle -->
+        <div class="category-wrapper">
+            <h3 class="category-title">Fashion Bazaar & Lifestyle</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="Bazar_Glamlocal.jpeg" alt="Bazar Glamlocal" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Bazar_Glamlocal_2.jpeg" alt="Bazar Glamlocal" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="GLAMLOCAL BAZAR 1.jpg" alt="Bazar Glamlocal" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="GLAMLOCAL BAZAR 4.jpg" alt="Bazar Glamlocal" class="gallery-img" loading="lazy"></div>
+                
+                <div class="gallery-item"><img src="Fashion_Welcome_Shisterhood_Gathering_Customer_Loyal_1.jpeg" alt="Fashion Gathering" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Fashion_Welcome_Shisterhood_Gathering_Customer_Loyal_2.jpeg" alt="Fashion Gathering" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="Fashion_Welcome_Shisterhood_Gathering_Customer_Loyal_3.jpeg" alt="Fashion Gathering" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item landscape"><img src="Fashion_Welcome_Shisterhood_Gathering_Customer_Loyal_4.jpeg" alt="Fashion Gathering" class="gallery-img" loading="lazy"></div>
+            </div>
+        </div>
+
+        <!-- KATEGORI 4: Talkshow & Fun Events -->
+        <div class="category-wrapper">
+            <h3 class="category-title">Talkshow & Fun Events</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="TALKSHOW PETROLHEAD 1.jpg" alt="Talkshow Petrolhead" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="TALKSHOW PETROLHEAD 2.jpg" alt="Talkshow Petrolhead" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="TALKSHOW PETROLHEAD 3.jpg" alt="Talkshow Petrolhead" class="gallery-img" loading="lazy"></div>
+
+                <div class="gallery-item"><img src="POSTINC KOPDHUAAAR RUN 2026 1.jpg" alt="Postinc Run" class="gallery-img" loading="lazy"></div>
+                <div class="gallery-item"><img src="POSTINC KOPDHUAAAR RUN 2026 2.jpg" alt="Postinc Run" class="gallery-img" loading="lazy"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>MIRA</h2>
+        <p>Professional Master of Ceremony</p>
+        <p style="font-size: 0.8rem; margin-top: 20px;">&copy; 2026 Mira. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
