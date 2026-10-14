@@ -152,20 +152,53 @@
             .ig-banner-card { padding: 30px 20px; margin-bottom: 50px; }
         }
         
-        /* Animasi Panah ke Bawah */
+        /* Animasi Panah (Sembunyi di PC, Tampil di Mobile) */
         @keyframes bounce-down {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-15px); }
-            60% { transform: translateY(-7px); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
         .scroll-indicator {
-            margin-top: 35px;
-            font-size: 1.8rem;
-            color: var(--gold);
+            display: none; /* Sembunyikan di PC/Laptop */
+            margin-top: 40px;
+            font-size: 1.2rem; /* Dikecilin biar ga cari perhatian */
+            color: var(--text-muted); /* Warnanya dibikin abu-abu halus, bukan emas */
             animation: bounce-down 2.5s infinite;
             cursor: pointer;
-            opacity: 0.8;
+            opacity: 0.5;
         }
+        .scroll-indicator p {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Pengaturan Layout Mobile */
+        @media (max-width: 768px) {
+            /* MENGHEMAT RUANG HP BIAR TOMBOL WA NAIK KE ATAS */
+            .profile-img { width: 140px; height: 140px; margin-bottom: 15px; } 
+            h1 { font-size: 2.2rem; }
+            .mc-title { font-size: 0.9rem; margin-bottom: 15px; }
+            .hero-desc { font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; }
+            
+            /* Tampilkan panah hanya di HP */
+            .scroll-indicator { display: block; }
+            
+            .career-grid { grid-template-columns: 1fr; gap: 30px; }
+            .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .img-card.wide-mobile { grid-column: span 2; aspect-ratio: 16/9; }
+            .ig-banner-title { font-size: 1.15rem !important; }
+            .ig-banner-title i { font-size: 1.3rem !important; }
+            .ig-banner-card { padding: 30px 20px; margin-bottom: 50px; }
+        }
+
+        <!-- Panah penunjuk konten di bawah (Hanya muncul di HP) -->
+        <div class="scroll-indicator" onclick="window.scrollBy({top: window.innerHeight - 100, behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+            <p>Portofolio</p>
+        </div>
+        
     </style>
 </head>
 <body>
@@ -181,7 +214,7 @@
         <h1>MIRA</h1>
         <div class="mc-title">Professional Master of Ceremony</div>
         <p class="hero-desc">
-            Mencairkan suasana dengan gaya komunikasi yang luwes, elegan, dan selalu memikat. Sebagai MC profesional yang berdomisili di Jakarta, saya terbiasa beradaptasi dengan berbagai karakter audiens. Mulai dari mengawal agenda formal seperti <i>Corporate Event</i>, FGD, dan <i>Executive Luncheon</i> (termasuk BUMN dan Multinasional), hingga menghidupkan kemeriahan panggung <i>Brand Activation</i> serta <i>Premium Fashion Bazaar</i>. Mari pastikan pesan Anda tersampaikan dengan memukau dan tepat sasaran.
+            Menghidupkan acara Anda dengan komunikasi yang luwes, elegan, dan memikat. Berdomisili di <strong>Jakarta</strong>, saya berpengalaman mengawal <i>Corporate Event</i>, FGD, <i>Executive Luncheon</i> (BUMN & Multinasional), hingga kemeriahan panggung <i>Premium Fashion Bazaar</i>. Mari pastikan pesan Anda tersampaikan dengan memukau.
         </p>
         <a href="https://wa.me/6281387071865" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Diskusikan Event Anda</a>
         
