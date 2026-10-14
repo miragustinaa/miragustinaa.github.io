@@ -11,6 +11,13 @@
     
     <!-- INI KUNCI ANTI DUPLIKAT: Kasih tau Google bahwa alamat aslinya adalah my.id -->
     <link rel="canonical" href="https://miramc.my.id/" />
+
+    <!-- Auto Redirect dari Github.io ke Domain Utama -->
+    <script>
+        if (window.location.hostname.includes("github.io")) {
+            window.location.replace("https://miramc.my.id" + window.location.pathname);
+        }
+    </script>
     
     <!-- Open Graph (Biar kalau link di-share di WA/IG muncul gambar dan judul estetik) -->
     <meta property="og:title" content="Mira | Professional Corporate MC Jakarta">
