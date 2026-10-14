@@ -98,35 +98,43 @@
         .hero-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 800px; font-weight: 300; line-height: 1.8; margin-bottom: 35px; }
         .hero-desc strong { color: #ddd; font-weight: 600; }
 
-        .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 30px; border-radius: 30px; text-decoration: none !important; font-weight: 700; transition: all 0.3s; }
+        .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 30px; border-radius: 30px; text-decoration: none !important; font-weight: 700; transition: all 0.3s; position: relative; z-index: 10; }
         .btn-wa:hover { background: #1da851; transform: translateY(-3px); }
         
-        /* Animasi Panah (Sembunyi di PC) */
+        /* Animasi Panah Lembut (Sembunyi di PC) */
         @keyframes bounce-down {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            40% { transform: translateY(-8px); } /* Pantulan tidak terlalu tinggi */
+            60% { transform: translateY(-4px); }
         }
         .scroll-wrapper {
             display: none; /* Sembunyikan default (di PC) */
             position: absolute;
-            bottom: 30px; /* Dikunci tepat di bawah layar */
+            bottom: 20px; /* Dikunci tepat di bawah layar */
             left: 0;
             right: 0;
             text-align: center;
+            z-index: 5;
         }
         .scroll-indicator {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            animation: bounce-down 2.5s infinite;
+            animation: bounce-down 3s infinite; /* Diperlambat agar tidak rusuh */
             cursor: pointer;
-            opacity: 0.6;
+            opacity: 0.4; /* Dibikin tipis transparan biar elegan */
             display: inline-block;
         }
         .scroll-indicator p { font-size: 0.75rem; margin-top: 5px; letter-spacing: 1.5px; text-transform: uppercase; }
 
-        /* Floating WA */
-        .float-wa { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 32px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none !important; }
+        /* Floating WA - Awalnya Disembunyikan (Opacity 0 & Visibility Hidden) */
+        .float-wa { 
+            position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 32px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none !important; 
+            opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.4s ease; /* Transisi halus */
+        }
+        /* Class yang akan dipanggil JS saat di-scroll */
+        .float-wa.show-float {
+            opacity: 1; visibility: visible; transform: translateY(0);
+        }
         .float-wa:hover { color: white; }
         .float-wa::before { content: ''; position: absolute; inset: 0; border: 2px solid #25D366; border-radius: 50%; animation: pulse-ring 2s infinite; z-index: -1; }
 
@@ -194,10 +202,10 @@
 </head>
 <body>
 
-    <!-- Tombol WA Floating -->
+    <!-- Tombol WA Floating (Akan disembunyikan oleh CSS saat load, dan dimunculkan oleh JS saat di-scroll) -->
     <a href="https://wa.me/6281387071865" class="float-wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-    <!-- HERO SECTION (Sekarang Full Screen 100vh) -->
+    <!-- HERO SECTION (Full Screen 100vh) -->
     <header class="fade-up">
         
         <img src="profil.png" alt="Mira Corporate MC Jakarta Berpengalaman" class="profile-img">
@@ -205,14 +213,13 @@
         <h1>MIRA</h1>
         <div class="mc-title">Professional Master of Ceremony</div>
         
-        <!-- Teks sudah dipadatkan sesuai kesepakatan -->
         <p class="hero-desc">
             Menghidupkan acara Anda dengan komunikasi yang luwes, elegan, dan memikat. Berdomisili di <strong>Jakarta</strong>, saya berpengalaman mengawal <i>Corporate Event</i>, FGD, <i>Executive Luncheon</i> (BUMN & Multinasional), hingga kemeriahan panggung <i>Premium Fashion Bazaar</i>. Mari pastikan pesan Anda tersampaikan dengan memukau.
         </p>
         
         <a href="https://wa.me/6281387071865" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Diskusikan Event Anda</a>
         
-        <!-- Panah penunjuk konten (Dikunci di posisi bawah layar, hanya muncul di HP) -->
+        <!-- Panah penunjuk konten (Dikunci di posisi bawah layar, animasi halus transparan) -->
         <div class="scroll-wrapper" onclick="window.scrollBy({top: window.innerHeight - 80, behavior: 'smooth'})">
             <div class="scroll-indicator">
                 <i class="fas fa-chevron-down"></i>
@@ -224,7 +231,7 @@
 
     <div class="container fade-up">
         
-        <!-- IG Banner Billboard (Eksklusif & Full Width) -->
+        <!-- IG Banner Billboard -->
         <div class="ig-banner-card">
             <h3 class="ig-banner-title"><i class="fab fa-instagram"></i> Cek Aksi Panggung Saya</h3>
             <p>Atmosfer acara, interaksi audiens, dan portofolio dinamis terekam lengkap di Instagram. Lihat bagaimana saya menghidupkan berbagai panggung.</p>
@@ -367,6 +374,19 @@
         <p>Professional Master of Ceremony</p>
         <p style="font-size: 0.85rem; margin-top: 25px; opacity: 0.6;">&copy; 2026 Mira. Specializing in Corporate & Lifestyle Events Jakarta.</p>
     </footer>
+
+    <!-- SCRIPT LOGIKA TOMBOL WA FLOATING -->
+    <script>
+        window.addEventListener('scroll', function() {
+            var floatWa = document.querySelector('.float-wa');
+            // Jika klien scroll ke bawah lebih dari 250px (Melewati area Header), tampilkan tombol WA floating
+            if (window.scrollY > 250) {
+                floatWa.classList.add('show-float');
+            } else {
+                floatWa.classList.remove('show-float');
+            }
+        });
+    </script>
 
 </body>
 </html>
