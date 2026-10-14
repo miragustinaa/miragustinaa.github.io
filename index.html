@@ -151,6 +151,21 @@
             .ig-banner-title i { font-size: 1.3rem !important; }
             .ig-banner-card { padding: 30px 20px; margin-bottom: 50px; }
         }
+        
+        /* Animasi Panah ke Bawah */
+        @keyframes bounce-down {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+        .scroll-indicator {
+            margin-top: 35px;
+            font-size: 1.8rem;
+            color: var(--gold);
+            animation: bounce-down 2.5s infinite;
+            cursor: pointer;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
