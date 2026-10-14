@@ -6,9 +6,11 @@
     
     <!-- SEO Optimization -->
     <title>Mira | Professional Corporate MC Jakarta</title>
-    <meta name="description" content="Mira adalah Professional MC di Jakarta & Jabodetabek. Spesialis memandu acara Corporate Event, Executive Handover, C-Level Luncheon, FGD, dan Brand Activation.">
-    <meta name="keywords" content="MC Event Korporat Jakarta, MC Jabodetabek, MC Pertamina, MC Berpengalaman, MC Handover, MC C-Level, MC Launching Produk, Master of Ceremony, FGD Moderator">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Mira adalah Professional MC di Jakarta & Jabodetabek. Spesialis memandu acara Corporate Event, Executive Handover, Premium Fashion Bazaar, FGD, dan Brand Activation.">
+    <meta name="keywords" content="MC Event Korporat Jakarta, MC Jabodetabek, MC Pertamina, MC Berpengalaman, MC Handover, MC C-Level, MC Launching Produk, Master of Ceremony, MC Fashion Bazaar">
+    
+    <!-- Trik Favicon Tanpa File Gambar (Langsung render SVG teks MG warna Emas) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%231a1a24%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 fill=%22%23d4af37%22 text-anchor=%22middle%22>MG</text></svg>">
     
     <!-- Schema.org untuk mengawinkan reputasi Website & Instagram ke mata Google -->
     <script type="application/ld+json">
@@ -21,7 +23,7 @@
       "sameAs": [
         "https://instagram.com/miragustinaa.mc"
       ],
-      "knowsAbout": ["Corporate Events", "Focus Group Discussion", "Executive Handover", "Brand Activation", "Event Pertamina"]
+      "knowsAbout": ["Corporate Events", "Focus Group Discussion", "Executive Handover", "Brand Activation", "Fashion Bazaar", "Event Pertamina"]
     }
     </script>
 
@@ -36,9 +38,22 @@
             --bg-light: #fafafa;
         }
         
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', system-ui, sans-serif; color: #222; line-height: 1.7; background-color: var(--bg-light); }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        html { 
+            scroll-behavior: smooth; 
+        }
+        
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+            color: #222; 
+            line-height: 1.7; 
+            background-color: var(--bg-light); 
+        }
 
         /* Animasi */
         @keyframes floating {
@@ -46,80 +61,356 @@
             50% { transform: translateY(-12px); box-shadow: 0 25px 35px rgba(212,175,55,0.4); }
             100% { transform: translateY(0px); box-shadow: 0 15px 30px rgba(212,175,55,0.2); }
         }
-        @keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 0.5; } 100% { transform: scale(1.3); opacity: 0; } }
-        .fade-up { animation: fadeInUp 1s ease-out forwards; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        
+        @keyframes pulse-ring { 
+            0% { transform: scale(0.8); opacity: 0.5; } 
+            100% { transform: scale(1.3); opacity: 0; } 
+        }
+        
+        .fade-up { 
+            animation: fadeInUp 1s ease-out forwards; 
+        }
+        
+        @keyframes fadeInUp { 
+            from { opacity: 0; transform: translateY(40px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
 
         /* Hero Section */
-        header { background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a24 100%); color: var(--text-main); text-align: center; padding: 90px 20px 70px; position: relative; }
-        .profile-img { width: 190px; height: 190px; object-fit: cover; border-radius: 20px; border: 3px solid var(--gold); animation: floating 4s ease-in-out infinite; margin-bottom: 25px; }
-        h1 { font-size: 3.2rem; letter-spacing: 3px; font-weight: 800; margin-bottom: 5px; color: #fff; }
-        .mc-title { color: var(--gold); font-size: 1.1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
-        .hero-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 750px; margin: 0 auto 35px; font-weight: 300; line-height: 1.8; }
-        .hero-desc strong { color: #ddd; font-weight: 600; }
+        header { 
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a24 100%); 
+            color: var(--text-main); 
+            text-align: center; 
+            padding: 90px 20px 70px; 
+            position: relative; 
+        }
+        
+        .profile-img { 
+            width: 190px; 
+            height: 190px; 
+            object-fit: cover; 
+            border-radius: 20px; 
+            border: 3px solid var(--gold); 
+            animation: floating 4s ease-in-out infinite; 
+            margin-bottom: 25px; 
+        }
+        
+        h1 { 
+            font-size: 3.2rem; 
+            letter-spacing: 3px; 
+            font-weight: 800; 
+            margin-bottom: 5px; 
+            color: #fff; 
+        }
+        
+        .mc-title { 
+            color: var(--gold); 
+            font-size: 1.1rem; 
+            font-weight: 700; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            margin-bottom: 20px; 
+        }
+        
+        .hero-desc { 
+            color: var(--text-muted); 
+            font-size: 1.05rem; 
+            max-width: 800px; 
+            margin: 0 auto 35px; 
+            font-weight: 300; 
+            line-height: 1.8; 
+        }
+        
+        .hero-desc strong { 
+            color: #ddd; 
+            font-weight: 600; 
+        }
 
-        .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; transition: all 0.3s; }
-        .btn-wa:hover { background: #1da851; transform: translateY(-3px); }
-        .float-wa { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 32px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; }
-        .float-wa::before { content: ''; position: absolute; inset: 0; border: 2px solid #25D366; border-radius: 50%; animation: pulse-ring 2s infinite; z-index: -1; }
+        .btn-wa { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            background: #25D366; 
+            color: white; 
+            padding: 14px 30px; 
+            border-radius: 30px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: all 0.3s; 
+        }
+        
+        .btn-wa:hover { 
+            background: #1da851; 
+            transform: translateY(-3px); 
+        }
+        
+        .float-wa { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            background: #25D366; 
+            color: white; 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            text-align: center; 
+            font-size: 32px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+            z-index: 100; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        
+        .float-wa::before { 
+            content: ''; 
+            position: absolute; 
+            inset: 0; 
+            border: 2px solid #25D366; 
+            border-radius: 50%; 
+            animation: pulse-ring 2s infinite; 
+            z-index: -1; 
+        }
 
         /* Layout Utama */
-        .container { max-width: 1150px; margin: 0 auto; padding: 70px 20px; }
-        .section-title { text-align: center; font-size: 2.2rem; color: var(--bg-dark); margin-bottom: 50px; font-weight: 800; }
-        .section-title::after { content: ''; display: block; width: 70px; height: 4px; background: var(--gold); margin: 15px auto 0; border-radius: 2px; }
+        .container { 
+            max-width: 1150px; 
+            margin: 0 auto; 
+            padding: 70px 20px; 
+        }
+        
+        .section-title { 
+            text-align: center; 
+            font-size: 2.2rem; 
+            color: var(--bg-dark); 
+            margin-bottom: 50px; 
+            font-weight: 800; 
+        }
+        
+        .section-title::after { 
+            content: ''; 
+            display: block; 
+            width: 70px; 
+            height: 4px; 
+            background: var(--gold); 
+            margin: 15px auto 0; 
+            border-radius: 2px; 
+        }
 
         /* Karier */
-        .career-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        .career-card { background: #fff; padding: 35px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
-        .career-card h3 { font-size: 1.4rem; color: var(--bg-dark); margin-bottom: 30px; display: flex; align-items: center; gap: 12px; }
-        .career-card h3 i { color: var(--gold); font-size: 1.6rem; }
-        .timeline-item { position: relative; padding-left: 28px; margin-bottom: 30px; border-left: 2px solid #eaeaea; }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-item::before { content: ''; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; background-color: var(--gold); border-radius: 50%; }
-        .time-date { font-size: 0.85rem; font-weight: 700; color: var(--gold); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
-        .time-title { font-size: 1.15rem; font-weight: 700; color: var(--bg-dark); margin-bottom: 8px; }
-        .time-desc { font-size: 0.95rem; color: #555; }
+        .career-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+        }
+        
+        .career-card { 
+            background: #fff; 
+            padding: 35px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .career-card h3 { 
+            font-size: 1.4rem; 
+            color: var(--bg-dark); 
+            margin-bottom: 30px; 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+        }
+        
+        .career-card h3 i { 
+            color: var(--gold); 
+            font-size: 1.6rem; 
+        }
+        
+        .timeline-item { 
+            position: relative; 
+            padding-left: 28px; 
+            margin-bottom: 30px; 
+            border-left: 2px solid #eaeaea; 
+        }
+        
+        .timeline-item:last-child { 
+            margin-bottom: 0; 
+        }
+        
+        .timeline-item::before { 
+            content: ''; 
+            position: absolute; 
+            left: -7px; 
+            top: 6px; 
+            width: 12px; 
+            height: 12px; 
+            background-color: var(--gold); 
+            border-radius: 50%; 
+        }
+        
+        .time-date { 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            color: var(--gold); 
+            margin-bottom: 6px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+        
+        .time-title { 
+            font-size: 1.15rem; 
+            font-weight: 700; 
+            color: var(--bg-dark); 
+            margin-bottom: 8px; 
+        }
+        
+        .time-desc { 
+            font-size: 0.95rem; 
+            color: #555; 
+        }
 
-        /* IG Banner */
-        .ig-banner { background: linear-gradient(135deg, #1a1a24 0%, var(--bg-dark) 100%); border-radius: 20px; padding: 40px; text-align: center; color: white; margin: 20px 0 60px; border-bottom: 5px solid #E1306C; }
-        .ig-banner h3 { font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; }
-        .ig-banner p { color: #ccc; font-size: 1.05rem; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .btn-ig { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s; }
-        .btn-ig:hover { transform: scale(1.05); }
+        /* IG Banner yang dipindah ke kolom kanan */
+        .ig-banner-inline { 
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-dark) 100%); 
+            border-radius: 16px; 
+            padding: 35px 25px; 
+            text-align: center; 
+            color: white; 
+            margin-top: 40px; 
+            border-bottom: 5px solid #E1306C;
+            flex-grow: 1; /* Biar mengisi kekosongan kolom kanan */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .ig-banner-inline h3 { 
+            font-size: 1.5rem; 
+            margin-bottom: 15px; 
+            font-weight: 800; 
+            color: white;
+            justify-content: center;
+        }
+        
+        .ig-banner-inline p { 
+            color: #ccc; 
+            font-size: 1rem; 
+            margin-bottom: 25px; 
+        }
+        
+        .btn-ig { 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            gap: 10px; 
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+            color: white; 
+            padding: 12px 25px; 
+            border-radius: 30px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1rem; 
+            transition: transform 0.3s; 
+        }
+        
+        .btn-ig:hover { 
+            transform: scale(1.05); 
+        }
 
         /* Galeri & Layout Mosaic Variatif */
-        .category-wrap { margin-bottom: 70px; }
-        .cat-header { display: flex; align-items: center; margin-bottom: 25px; gap: 15px; }
-        .cat-title { font-size: 1.6rem; color: var(--bg-dark); font-weight: 800; }
-        .cat-line { flex-grow: 1; height: 1px; background: #ddd; }
+        .category-wrap { 
+            margin-bottom: 70px; 
+        }
         
-        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; grid-auto-flow: dense; }
-        .img-card { position: relative; border-radius: 12px; overflow: hidden; background: #e9ecef; aspect-ratio: 3/4; }
-        .img-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease, opacity 0.5s; opacity: 0; }
-        .img-card img.loaded { opacity: 1; }
-        .img-card:hover img { transform: scale(1.08); }
+        .cat-header { 
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 25px; 
+            gap: 15px; 
+        }
+        
+        .cat-title { 
+            font-size: 1.6rem; 
+            color: var(--bg-dark); 
+            font-weight: 800; 
+        }
+        
+        .cat-line { 
+            flex-grow: 1; 
+            height: 1px; 
+            background: #ddd; 
+        }
+        
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+            gap: 15px; 
+            grid-auto-flow: dense; 
+        }
+        
+        .img-card { 
+            position: relative; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            background: #e9ecef; 
+            aspect-ratio: 3/4; 
+        }
+        
+        .img-card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block; 
+            transition: transform 0.6s ease, opacity 0.5s; 
+            opacity: 0; 
+        }
+        
+        .img-card img.loaded { 
+            opacity: 1; 
+        }
+        
+        .img-card:hover img { 
+            transform: scale(1.08); 
+        }
 
         /* Pengaturan Layout Estetik Khusus Desktop */
         @media (min-width: 768px) {
-            .gallery { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-            .img-card.featured-card { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-            .img-card.wide-card { grid-column: span 2; aspect-ratio: 16/9; }
+            .gallery { 
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+            }
+            .img-card.featured-card { 
+                grid-column: span 2; 
+                grid-row: span 2; 
+                aspect-ratio: auto; 
+            }
+            .img-card.wide-card { 
+                grid-column: span 2; 
+                aspect-ratio: 16/9; 
+            }
         }
 
         /* Pengaturan Layout Mobile: 2 Kolom dengan Variasi Jeda (Mosaic) */
         @media (max-width: 768px) {
-            .career-grid { grid-template-columns: 1fr; gap: 30px; }
-            .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            
-            /* Class khusus agar di mobile ada foto yang membentang lebar (1 kolom penuh) sebagai pemanis/jeda */
-            .img-card.wide-mobile { grid-column: span 2; aspect-ratio: 16/9; }
+            .career-grid { 
+                grid-template-columns: 1fr; 
+                gap: 30px; 
+            }
+            .gallery { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 10px; 
+            }
+            .img-card.wide-mobile { 
+                grid-column: span 2; 
+                aspect-ratio: 16/9; 
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- Tombol WA -->
-    <a href="https://wa.me/6281387071865" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/6281387071865" class="float-wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
     <!-- HERO SECTION -->
     <header class="fade-up">
@@ -129,53 +420,60 @@
         <h1>MIRA</h1>
         <div class="mc-title">Professional Master of Ceremony</div>
         <p class="hero-desc">
-            Menghadirkan pesona komunikasi yang elegan, adaptif, dan berkelas untuk menghidupkan setiap momen berharga Anda. Berdomisili di <strong>Jakarta</strong> dan melayani wilayah <strong>Jabodetabek</strong>, saya berspesialisasi dalam memandu <i>Corporate Event</i>, <i>Executive Luncheon</i>, FGD, hingga <i>Brand Activation</i>. Dengan rekam jejak memandu berbagai acara institusi bergengsi, perusahaan multinasional, hingga BUMN strategis, saya memastikan setiap acara Anda berjalan memukau dan tepat sasaran.
+            Mencairkan suasana dengan gaya komunikasi yang luwes, elegan, dan selalu memikat. Sebagai MC profesional yang berdomisili di Jakarta, saya terbiasa beradaptasi dengan berbagai karakter audiens. Mulai dari mengawal agenda formal seperti <i>Corporate Event</i>, FGD, dan <i>Executive Luncheon</i> (termasuk BUMN dan Multinasional), hingga menghidupkan kemeriahan panggung <i>Brand Activation</i> serta <i>Premium Fashion Bazaar</i>. Mari pastikan pesan Anda tersampaikan dengan memukau dan tepat sasaran.
         </p>
         <a href="https://wa.me/6281387071865" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Diskusikan Event Anda</a>
     </header>
 
     <div class="container fade-up">
         
-        <!-- IG CTA BANNER -->
-        <div class="ig-banner">
-            <h3><i class="fab fa-instagram"></i> Cek Aksi Panggung Saya</h3>
-            <p>Atmosfer acara, interaksi audiens, dan portofolio dinamis saya terekam di Instagram. Kunjungi untuk melihat bagaimana saya menghidupkan suasana di berbagai panggung.</p>
-            <a href="https://instagram.com/miragustinaa.mc" class="btn-ig" target="_blank">Lihat Video Portofolio</a>
-        </div>
-
         <h2 class="section-title">Profil & Rekam Jejak Karier</h2>
 
         <div class="career-grid">
+            <!-- Kolom Kiri: Pengalaman Kerja yang Panjang -->
             <div class="career-card">
                 <h3><i class="fas fa-briefcase"></i> Pengalaman Profesional</h3>
+                
                 <div class="timeline-item">
                     <div class="time-date">2018 - Sekarang</div>
                     <div class="time-title">Professional Master of Ceremony</div>
                     <div class="time-desc">Fokus pada <i>Corporate Events</i>, FGD, <i>Executive Handover & Luncheon</i>, <i>Brand Activation</i>, <i>Grand Opening</i>, hingga <i>Premium Fashion Bazaar</i>. Menjaga ritme acara agar tetap elegan, berbobot, namun adaptif dan tidak kaku.</div>
                 </div>
+                
                 <div class="timeline-item">
                     <div class="time-date">2020 - 2025</div>
                     <div class="time-title">Professional Live Streaming Host</div>
                     <div class="time-desc">Bekerja sama dengan berbagai <i>brand</i>. Menghidupkan interaksi audiens di era digital, meningkatkan <i>engagement</i>, dan menguasai teknik komunikasi persuasif secara <i>real-time</i>.</div>
                 </div>
+                
                 <div class="timeline-item">
                     <div class="time-date">2014 - 2017</div>
                     <div class="time-title">Team Leader</div>
                     <div class="time-desc">PT. Bio Food Indonesia. Mengelola tim, merancang edukasi, dan bernegosiasi dengan klien. Masa ini menajamkan kemampuan <i>public speaking</i> dan analisis karakter massa.</div>
                 </div>
+                
                 <div class="timeline-item">
                     <div class="time-date">2009 - 2012</div>
                     <div class="time-title">Customer Service</div>
-                    <div class="time-desc">Bank Central Asia (BCA). Membentuk fondasi komunikasi interpersonal, <i>hospitality</i>, dan standar pelayanan prima (<i>service excellence</i>) di perbankan.</div>
+                    <div class="time-desc">Bank Central Asia (BCA). Membentuk fondasi komunikasi interpersonal, <i>hospitality</i>, dan standar pelayanan prima (<i>service excellence</i>) di dunia perbankan.</div>
                 </div>
             </div>
 
+            <!-- Kolom Kanan: Pendidikan & IG Banner untuk menyeimbangkan grid -->
             <div class="career-card">
-                <h3><i class="fas fa-graduation-cap"></i> Pendidikan & Analisis</h3>
-                <div class="timeline-item">
+                <h3><i class="fas fa-graduation-cap"></i> Pendidikan Formal</h3>
+                
+                <div class="timeline-item" style="margin-bottom: 0;">
                     <div class="time-date">2005 - 2009</div>
                     <div class="time-title">Universitas Sriwijaya</div>
-                    <div class="time-desc">Program Sarjana Akuntansi. Pemikiran analitis dan struktural yang dipelajari sangat berkontribusi dalam kemampuan membedah <i>rundown</i> kompleks dan protokol ketat di acara korporasi.</div>
+                    <div class="time-desc">Program Sarjana Akuntansi. Pemikiran struktural yang dipelajari sangat berkontribusi dalam kemampuan membedah <i>rundown</i> kompleks dan protokol ketat di acara korporasi.</div>
+                </div>
+
+                <!-- Banner IG diselipkan di sini agar mengisi kekosongan kolom kanan -->
+                <div class="ig-banner-inline">
+                    <h3><i class="fab fa-instagram"></i> Cek Aksi Panggung Saya</h3>
+                    <p>Atmosfer acara, interaksi audiens, dan portofolio dinamis terekam di Instagram. Lihat bagaimana saya menghidupkan berbagai panggung.</p>
+                    <a href="https://instagram.com/miragustinaa.mc" class="btn-ig" target="_blank">Lihat Video Portofolio</a>
                 </div>
             </div>
         </div>
@@ -185,22 +483,18 @@
     <section class="container fade-up" style="padding-top: 0;">
         <h2 class="section-title">Galeri Acara</h2>
 
-        <!-- KATEGORI 1: Corporate, Training & FGD (Fokus Utama Pertamina & Korporat) -->
+        <!-- KATEGORI 1: Corporate, Training & FGD -->
         <div class="category-wrap">
             <div class="cat-header"><h3 class="cat-title">Corporate Events, Training & FGD</h3><div class="cat-line"></div></div>
             <div class="gallery">
                 <div class="img-card featured-card"><img src="Training_Stream_Health_Pertamina_1.jpeg" alt="MC Event Korporat Pertamina" loading="lazy" onload="this.classList.add('loaded')"></div>
                 <div class="img-card"><img src="Training_Stream_Health_Pertamina_2.jpeg" alt="MC Event Korporat BUMN Pertamina" loading="lazy" onload="this.classList.add('loaded')"></div>
                 <div class="img-card"><img src="FGD_01.jpg" alt="Moderator FGD Pertamina" loading="lazy" onload="this.classList.add('loaded')"></div>
-                
-                <!-- class wide-mobile bikin gambar membentang penuh 1 baris khusus di HP -->
                 <div class="img-card wide-mobile"><img src="XLSMART_FUTURE_READY_TRAINING_1.jpeg" alt="MC Corporate Training Jakarta" loading="lazy" onload="this.classList.add('loaded')"></div>
-                
                 <div class="img-card"><img src="XLSMART_FUTURE_READY_TRAINING_2.jpeg" alt="MC Training Jabodetabek" loading="lazy" onload="this.classList.add('loaded')"></div>
                 <div class="img-card"><img src="Training_AI.jpeg" alt="MC Seminar AI" loading="lazy" onload="this.classList.add('loaded')"></div>
                 <div class="img-card"><img src="Training_AI_2.jpeg" alt="Professional MC Training" loading="lazy" onload="this.classList.add('loaded')"></div>
                 <div class="img-card wide-card"><img src="Training_AI_3.jpeg" alt="MC Acara Edukasi" loading="lazy" onload="this.classList.add('loaded')"></div>
-                
                 <div class="img-card"><img src="Training_AI_4.jpeg" alt="Corporate MC Jakarta" loading="lazy" onload="this.classList.add('loaded')"></div>
                 <div class="img-card"><img src="FGD_03.jpg" alt="MC Focus Group Discussion" loading="lazy" onload="this.classList.add('loaded')"></div>
                 <div class="img-card"><img src="FGD_06.jpg" alt="MC Diskusi Korporat" loading="lazy" onload="this.classList.add('loaded')"></div>
@@ -255,7 +549,7 @@
             </div>
         </div>
 
-        <!-- KATEGORI 5: Fun Events & Team Building (Santai) -->
+        <!-- KATEGORI 5: Fun Events -->
         <div class="category-wrap">
             <div class="cat-header"><h3 class="cat-title">Corporate Gathering, Talkshow & Fun Events</h3><div class="cat-line"></div></div>
             <div class="gallery">
@@ -276,7 +570,7 @@
     <footer style="background: var(--bg-dark); color: #888; text-align: center; padding: 50px 20px; border-top: 1px solid #333;">
         <h2 style="color: var(--gold); margin-bottom: 5px; font-weight: 800; letter-spacing: 2px;">MIRA</h2>
         <p>Professional Master of Ceremony</p>
-        <p style="font-size: 0.85rem; margin-top: 25px; opacity: 0.6;">&copy; 2026 Mira. Specializing in Corporate & Executive Events Jakarta.</p>
+        <p style="font-size: 0.85rem; margin-top: 25px; opacity: 0.6;">&copy; 2026 Mira. Specializing in Corporate & Lifestyle Events Jakarta.</p>
     </footer>
 
 </body>
