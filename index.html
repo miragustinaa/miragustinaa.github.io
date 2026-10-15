@@ -7,27 +7,27 @@
     <!-- SEO & Canonical Tag -->
     <title>Mira | Professional Corporate MC Jakarta</title>
     <meta name="description" content="Mira adalah Professional MC di Jakarta & Jabodetabek. Spesialis memandu acara Corporate Event, Executive Handover, Premium Fashion Bazaar, FGD, dan Brand Activation.">
-    <meta name="keywords" content="MC kantor, MC Event Korporat Jakarta, MC Jabodetabek, MC Pertamina, MC Berpengalaman, MC Handover, MC C-Level, MC Launching Produk, Master of Ceremony, MC Fashion Bazaar">
+    <meta name="keywords" content="MC Event Korporat Jakarta, MC Jabodetabek, MC Pertamina, MC Berpengalaman, MC Handover, MC C-Level, MC Launching Produk, Master of Ceremony, MC Fashion Bazaar">
     <link rel="canonical" href="https://miramc.my.id/" />
     
-    <!-- Open Graph -->
+    <!-- Open Graph (Tampilan estetik kalau link dishare di WA/IG) -->
     <meta property="og:title" content="Mira | Professional Corporate MC Jakarta">
     <meta property="og:description" content="Spesialis MC Corporate Event, Executive Luncheon, FGD, dan Brand Activation di Jakarta.">
     <meta property="og:image" content="https://miramc.my.id/profil.png">
     <meta property="og:url" content="https://miramc.my.id/">
     <meta property="og:type" content="website">
 
-    <!-- Auto Redirect -->
+    <!-- Auto Redirect dari Github.io ke Domain Utama -->
     <script>
         if (window.location.hostname.includes("github.io")) {
             window.location.replace("https://miramc.my.id" + window.location.pathname);
         }
     </script>
 
-    <!-- Favicon -->
+    <!-- Favicon Bulat Estetik -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%231a1a24%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 fill=%22%23d4af37%22 text-anchor=%22middle%22>MG</text></svg>">
     
-    <!-- Schema.org -->
+    <!-- Schema.org untuk menyatukan Web & Instagram -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -90,6 +90,28 @@
             align-items: center;
             padding: 40px 20px 100px 20px;
         }
+
+        /* TOMBOL SHARE APP-STYLE (Pojok Kanan Atas) */
+        .top-share-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--gold);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 20;
+            backdrop-filter: blur(5px);
+        }
+        .top-share-btn:hover { background: var(--gold); color: var(--bg-dark); transform: scale(1.1); }
         
         .profile-img { width: 180px; height: 180px; object-fit: cover; border-radius: 20px; border: 3px solid var(--gold); animation: floating 4s ease-in-out infinite; margin-bottom: 25px; }
         h1 { font-size: 3.2rem; letter-spacing: 3px; font-weight: 800; margin-bottom: 5px; color: #fff; }
@@ -97,23 +119,9 @@
         .hero-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 800px; font-weight: 300; line-height: 1.8; margin-bottom: 35px; }
         .hero-desc strong { color: #ddd; font-weight: 600; }
 
-        /* BUTTONS AREA (Sekarang ada 2 tombol) */
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap; /* Kalau di HP sempit, dia otomatis turun ke bawah rapi */
-            position: relative;
-            z-index: 10;
-        }
-
-        .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 30px; border-radius: 30px; text-decoration: none !important; font-weight: 700; transition: all 0.3s; }
+        /* Tombol WA (Kembali Solo Karier di Tengah) */
+        .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 30px; border-radius: 30px; text-decoration: none !important; font-weight: 700; transition: all 0.3s; position: relative; z-index: 10; }
         .btn-wa:hover { background: #1da851; transform: translateY(-3px); }
-        
-        /* Tombol Share (Ghost Button Elegan) */
-        .btn-share { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 12px 25px; border-radius: 30px; text-decoration: none !important; font-weight: 600; font-family: inherit; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
-        .btn-share:hover { background: rgba(212, 175, 55, 0.1); transform: translateY(-3px); }
 
         /* Animasi Panah Lembut */
         @keyframes bounce-down {
@@ -176,6 +184,9 @@
 
         /* Pengaturan Layout Mobile */
         @media (max-width: 768px) {
+            /* Tombol share menyesuaikan jarak aman di HP */
+            .top-share-btn { top: 20px; right: 20px; width: 40px; height: 40px; font-size: 1rem; }
+            
             .profile-img { width: 150px; height: 150px; margin-bottom: 15px; } 
             h1 { font-size: 2.2rem; }
             .mc-title { font-size: 0.9rem; margin-bottom: 15px; }
@@ -200,6 +211,11 @@
     <!-- HERO SECTION -->
     <header class="fade-up">
         
+        <!-- Ikon Share App-Style di Pojok Kanan Atas -->
+        <div class="top-share-btn" onclick="shareProfile()" title="Bagikan Profil">
+            <i class="fas fa-share-nodes"></i>
+        </div>
+        
         <img src="profil.png" alt="Mira Corporate MC Jakarta Berpengalaman" class="profile-img">
         
         <h1>MIRA</h1>
@@ -209,11 +225,8 @@
             Menghidupkan acara Anda dengan komunikasi yang luwes, elegan, dan memikat. Berdomisili di <strong>Jakarta</strong>, saya berpengalaman mengawal <i>Corporate Event</i>, FGD, <i>Executive Luncheon</i> (BUMN & Multinasional), hingga kemeriahan panggung <i>Premium Fashion Bazaar</i>. Mari pastikan pesan Anda tersampaikan dengan memukau.
         </p>
         
-        <!-- Tombol Hero Berjejer Elegan -->
-        <div class="hero-buttons">
-            <a href="https://wa.me/6281387071865" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Diskusikan Event Anda</a>
-            <button onclick="shareProfile()" class="btn-share"><i class="fas fa-share-nodes"></i> Bagikan Profil</button>
-        </div>
+        <!-- Tombol WA kembali Solo Karier di tengah! -->
+        <a href="https://wa.me/6281387071865" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Diskusikan Event Anda</a>
         
         <!-- Panah penunjuk konten (Aman, terkunci di bawah) -->
         <div class="scroll-wrapper" onclick="window.scrollBy({top: window.innerHeight - 80, behavior: 'smooth'})">
@@ -394,7 +407,6 @@
                     console.log('Error sharing:', error);
                 });
             } else {
-                // Fallback kalau browser HP/PC jadul (otomatis copy text)
                 var tempInput = document.createElement("input");
                 tempInput.value = "https://miramc.my.id/";
                 document.body.appendChild(tempInput);
