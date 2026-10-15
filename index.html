@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & Canonical Tag (ANTI DUPLIKAT SPAM) -->
+    <!-- SEO & Canonical Tag -->
     <title>Mira | Professional Corporate MC Jakarta</title>
     <meta name="description" content="Mira adalah Professional MC di Jakarta & Jabodetabek. Spesialis memandu acara Corporate Event, Executive Handover, Premium Fashion Bazaar, FGD, dan Brand Activation.">
-    <meta name="keywords" content="MC Event Korporat Jakarta, MC Jabodetabek, MC Pertamina, MC Berpengalaman, MC Handover, MC C-Level, MC Launching Produk, Master of Ceremony, MC Fashion Bazaar">
+    <meta name="keywords" content="MC kantor, MC Event Korporat Jakarta, MC Jabodetabek, MC Pertamina, MC Berpengalaman, MC Handover, MC C-Level, MC Launching Produk, Master of Ceremony, MC Fashion Bazaar">
     <link rel="canonical" href="https://miramc.my.id/" />
     
-    <!-- Open Graph (Tampilan estetik kalau link dishare di WA/IG) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Mira | Professional Corporate MC Jakarta">
     <meta property="og:description" content="Spesialis MC Corporate Event, Executive Luncheon, FGD, dan Brand Activation di Jakarta.">
     <meta property="og:image" content="https://miramc.my.id/profil.png">
     <meta property="og:url" content="https://miramc.my.id/">
     <meta property="og:type" content="website">
 
-    <!-- Auto Redirect dari Github.io ke Domain Utama -->
+    <!-- Auto Redirect -->
     <script>
         if (window.location.hostname.includes("github.io")) {
             window.location.replace("https://miramc.my.id" + window.location.pathname);
         }
     </script>
 
-    <!-- Favicon Bulat Estetik -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%231a1a24%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 fill=%22%23d4af37%22 text-anchor=%22middle%22>MG</text></svg>">
     
-    <!-- Schema.org untuk menyatukan Web & Instagram -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -88,56 +88,45 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* Tambahan padding-bottom 100px agar konten (tombol WA) aman dan tidak menabrak panah di bawah */
             padding: 40px 20px 100px 20px;
         }
         
         .profile-img { width: 180px; height: 180px; object-fit: cover; border-radius: 20px; border: 3px solid var(--gold); animation: floating 4s ease-in-out infinite; margin-bottom: 25px; }
         h1 { font-size: 3.2rem; letter-spacing: 3px; font-weight: 800; margin-bottom: 5px; color: #fff; }
         .mc-title { color: var(--gold); font-size: 1.1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
-        
         .hero-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 800px; font-weight: 300; line-height: 1.8; margin-bottom: 35px; }
         .hero-desc strong { color: #ddd; font-weight: 600; }
 
-        .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 30px; border-radius: 30px; text-decoration: none !important; font-weight: 700; transition: all 0.3s; position: relative; z-index: 10; }
+        /* BUTTONS AREA (Sekarang ada 2 tombol) */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Kalau di HP sempit, dia otomatis turun ke bawah rapi */
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 30px; border-radius: 30px; text-decoration: none !important; font-weight: 700; transition: all 0.3s; }
         .btn-wa:hover { background: #1da851; transform: translateY(-3px); }
         
-        /* Animasi Panah Lembut (Desain Baru, Lebih Pas) */
+        /* Tombol Share (Ghost Button Elegan) */
+        .btn-share { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 12px 25px; border-radius: 30px; text-decoration: none !important; font-weight: 600; font-family: inherit; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+        .btn-share:hover { background: rgba(212, 175, 55, 0.1); transform: translateY(-3px); }
+
+        /* Animasi Panah Lembut */
         @keyframes bounce-down {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-8px); } 
             60% { transform: translateY(-4px); }
         }
-        .scroll-wrapper {
-            display: none; 
-            position: absolute;
-            bottom: 25px; /* Jarak pas dari mentok bawah */
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 5;
-        }
-        .scroll-indicator {
-            font-size: 1.4rem; /* Sedikit dibesarkan icon-nya */
-            color: var(--gold); /* Pakai emas biar premium */
-            animation: bounce-down 3s infinite;
-            cursor: pointer;
-            opacity: 0.75; /* Rasio transparan yang pas, nggak samar nggak ketebalan */
-            display: inline-block;
-        }
-        .scroll-indicator p { 
-            font-size: 0.75rem; 
-            margin-top: 8px; 
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-            color: #ccc; /* Teks abu muda, biar tidak balapan dengan emas */
-        }
+        .scroll-wrapper { display: none; position: absolute; bottom: 25px; left: 0; right: 0; text-align: center; z-index: 5; }
+        .scroll-indicator { font-size: 1.4rem; color: var(--gold); animation: bounce-down 3s infinite; cursor: pointer; opacity: 0.75; display: inline-block; }
+        .scroll-indicator p { font-size: 0.75rem; margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; color: #ccc; }
 
         /* Floating WA */
-        .float-wa { 
-            position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 32px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none !important; 
-            opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.4s ease;
-        }
+        .float-wa { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 32px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none !important; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.4s ease; }
         .float-wa.show-float { opacity: 1; visibility: visible; transform: translateY(0); }
         .float-wa:hover { color: white; }
         .float-wa::before { content: ''; position: absolute; inset: 0; border: 2px solid #25D366; border-radius: 50%; animation: pulse-ring 2s infinite; z-index: -1; }
@@ -192,7 +181,6 @@
             .mc-title { font-size: 0.9rem; margin-bottom: 15px; }
             .hero-desc { font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }
             
-            /* Tampilkan panah hanya di HP */
             .scroll-wrapper { display: block; }
             
             .career-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -209,7 +197,7 @@
     <!-- Tombol WA Floating -->
     <a href="https://wa.me/6281387071865" class="float-wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-    <!-- HERO SECTION (Full Screen 100vh dengan bantalan aman 100px di bawah) -->
+    <!-- HERO SECTION -->
     <header class="fade-up">
         
         <img src="profil.png" alt="Mira Corporate MC Jakarta Berpengalaman" class="profile-img">
@@ -221,9 +209,13 @@
             Menghidupkan acara Anda dengan komunikasi yang luwes, elegan, dan memikat. Berdomisili di <strong>Jakarta</strong>, saya berpengalaman mengawal <i>Corporate Event</i>, FGD, <i>Executive Luncheon</i> (BUMN & Multinasional), hingga kemeriahan panggung <i>Premium Fashion Bazaar</i>. Mari pastikan pesan Anda tersampaikan dengan memukau.
         </p>
         
-        <a href="https://wa.me/6281387071865" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Diskusikan Event Anda</a>
+        <!-- Tombol Hero Berjejer Elegan -->
+        <div class="hero-buttons">
+            <a href="https://wa.me/6281387071865" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Diskusikan Event Anda</a>
+            <button onclick="shareProfile()" class="btn-share"><i class="fas fa-share-nodes"></i> Bagikan Profil</button>
+        </div>
         
-        <!-- Panah penunjuk konten (Aman, terkunci di bawah, tidak nabrak tombol WA) -->
+        <!-- Panah penunjuk konten (Aman, terkunci di bawah) -->
         <div class="scroll-wrapper" onclick="window.scrollBy({top: window.innerHeight - 80, behavior: 'smooth'})">
             <div class="scroll-indicator">
                 <i class="fas fa-chevron-down"></i>
@@ -379,8 +371,9 @@
         <p style="font-size: 0.85rem; margin-top: 25px; opacity: 0.6;">&copy; 2026 Mira. Specializing in Corporate & Lifestyle Events Jakarta.</p>
     </footer>
 
-    <!-- SCRIPT LOGIKA TOMBOL WA FLOATING -->
+    <!-- SCRIPT LOGIKA SHARE & TOMBOL WA FLOATING -->
     <script>
+        // Logika memunculkan WA Floating saat di-scroll
         window.addEventListener('scroll', function() {
             var floatWa = document.querySelector('.float-wa');
             if (window.scrollY > 250) {
@@ -389,6 +382,28 @@
                 floatWa.classList.remove('show-float');
             }
         });
+
+        // Logika Web Share API (Tombol Bagikan Profil)
+        function shareProfile() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Mira | Professional Corporate MC',
+                    text: 'Cek profil dan rekam jejak MC profesional untuk Corporate Event & Lifestyle di Jakarta.',
+                    url: 'https://miramc.my.id/'
+                }).catch(function(error) {
+                    console.log('Error sharing:', error);
+                });
+            } else {
+                // Fallback kalau browser HP/PC jadul (otomatis copy text)
+                var tempInput = document.createElement("input");
+                tempInput.value = "https://miramc.my.id/";
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                alert("Link profil berhasil disalin! Silakan paste untuk membagikan.");
+            }
+        }
     </script>
 
 </body>
