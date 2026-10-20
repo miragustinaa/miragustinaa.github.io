@@ -4,54 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & Canonical Tag (Optimalisasi Natural) -->
     <title>Jasa MC Jakarta | Mira Professional Corporate MC</title>
-    <meta name="description" content="Mira adalah penyedia Jasa MC Profesional di Jakarta & Jabodetabek. Spesialis memandu acara Corporate Event, Jasa MC Korporat, Executive Handover, dan Brand Activation.">
-    <meta name="keywords" content="Jasa MC Jakarta, MC Event Korporat, Jasa MC Korporat, MC Jabodetabek, MC Pertamina, MC Berpengalaman, Master of Ceremony">
-    <link rel="canonical" href="https://miramc.my.id/" />
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Jasa MC Profesional Jakarta | Mira">
-    <meta property="og:description" content="Spesialis MC Corporate Event, Executive Luncheon, FGD, dan Brand Activation di Jakarta.">
-    <meta property="og:image" content="https://miramc.my.id/profil.png">
-    <meta property="og:url" content="https://miramc.my.id/">
-    <meta property="og:type" content="website">
+    <!-- LAPIS 1: Tag Canonical -->
+    <link rel="canonical" href="https://miramc.my.id/" />
 
-    <!-- Auto Redirect -->
+    <!-- LAPIS 2: Script Auto-Redirect GitHub -->
     <script>
-        if (window.location.hostname.includes("github.io")) {
-            window.location.replace("https://miramc.my.id" + window.location.pathname);
+        if (window.location.hostname === "miramc.github.io" || window.location.hostname === "miragustinaa.github.io") {
+            window.location.replace("https://miramc.my.id/");
         }
     </script>
-
-    <!-- FAVICON STANDAR GOOGLE SEARCH -->
-    <link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="favicon.png">
     
-    <!-- Schema.org untuk menyatukan Web, Instagram, dan FASTWORK -->
+    <!-- SEO KNOWLEDGE GRAPH (Ubah ke "Person" biar secepat Ardya!) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Jasa MC Mira",
-      "image": "https://miramc.my.id/profil.png",
+      "@type": "Person",
+      "name": "Mira",
+      "alternateName": "Mira MC",
       "url": "https://miramc.my.id",
-      "telephone": "+6281387071865",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Jakarta",
-        "addressRegion": "DKI Jakarta",
-        "addressCountry": "ID"
-      },
+      "jobTitle": "Professional Master of Ceremony",
+      "description": "Professional Master of Ceremony untuk Corporate Event, C-Level Luncheon, dan Brand Activation di Jakarta dan Jabodetabek.",
+      "image": "https://miramc.my.id/profil.png",
       "sameAs": [
         "https://instagram.com/miragustinaa.mc",
         "https://fastwork.id/user/miragustina"
-      ],
-      "description": "Penyedia Jasa MC Profesional untuk Corporate Event, C-Level Luncheon, dan Brand Activation di Jakarta dan Jabodetabek."
+      ]
     }
     </script>
+
+    <!-- META DASAR & SEO -->
+    <meta name="description" content="Mira adalah penyedia Jasa MC Profesional di Jakarta & Jabodetabek. Spesialis memandu acara Corporate Event, Jasa MC Korporat, Executive Handover, dan Brand Activation.">
+    <meta name="keywords" content="Jasa MC Jakarta, MC Event Korporat, Jasa MC Korporat, MC Jabodetabek, MC Pertamina, MC Berpengalaman, Master of Ceremony">
+    <meta name="author" content="Mira">
+
+    <!-- OPEN GRAPH (Kartu Share WA, Facebook, dll) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://miramc.my.id/">
+    <meta property="og:title" content="Jasa MC Profesional Jakarta | Mira">
+    <meta property="og:description" content="Spesialis MC Corporate Event, Executive Luncheon, FGD, dan Brand Activation di Jakarta.">
+    <meta property="og:image" content="https://miramc.my.id/profil.png">
+    <meta property="og:image:alt" content="Foto Profil Mira MC">
+    <meta property="og:image:type" content="image/png">
+    <meta property="profile:first_name" content="Mira">
+    <meta property="profile:username" content="miragustinaa.mc">
+
+    <!-- TWITTER / TELEGRAM CARD -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://miramc.my.id/">
+    <meta name="twitter:title" content="Jasa MC Profesional Jakarta | Mira">
+    <meta name="twitter:description" content="Spesialis MC Corporate Event, Executive Luncheon, FGD, dan Brand Activation di Jakarta.">
+    <meta name="twitter:image" content="https://miramc.my.id/profil.png">
+
+    <!-- Memanggil Favicon Teroptimasi (Pakai URL Absolut biar Googlebot gak nyasar) -->
+    <link rel="icon" type="image/png" sizes="512x512" href="https://miramc.my.id/favicon.png">
+    <link rel="shortcut icon" href="https://miramc.my.id/favicon.png">
+    <link rel="apple-touch-icon" href="https://miramc.my.id/favicon.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -286,7 +295,15 @@
                 
                 <div class="timeline-item" style="margin-bottom: 0;">
                     <div class="time-date">2005 - 2009</div>
-                    <div class="time-title">Universitas Sriwijaya</div>
+                    <div class="time-title" style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                        Universitas Sriwijaya
+                        
+                        <!-- Link Verifikasi Dikti (Halus, Elegan, Centang Hijau) -->
+                        <a href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/UIgoLv_ublMHk39U1kPcLrS-7ewLMfMVVY_NfjkqQXf_nWLnVP3PfRnm7ez7JfeGokgj1A==" target="_blank" title="Cek Data Validasi Dikti" style="font-size: 0.7rem; color: #25D366; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; background: rgba(37, 211, 102, 0.1); border-radius: 20px; transition: all 0.3s; letter-spacing: 0.5px;" onmouseover="this.style.background='#25D366'; this.style.color='#fff';" onmouseout="this.style.background='rgba(37, 211, 102, 0.1)'; this.style.color='#25D366';">
+                            <i class="fas fa-check-circle"></i> TERVERIFIKASI DIKTI
+                        </a>
+                    </div>
+                    
                     <div class="time-desc">Program Sarjana Akuntansi. Pemikiran struktural yang dipelajari sangat berkontribusi dalam kemampuan membedah <i>rundown</i> kompleks dan protokol ketat di acara korporasi.</div>
                 </div>
             </div>
